@@ -68,6 +68,7 @@ def audit_endpoint():
     results = seo_audit(url)
     return jsonify(results)
 
+
 import os
 
 if __name__ == '__main__':
