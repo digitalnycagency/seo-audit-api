@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import re
+import os
 
 app = Flask(__name__)
 
@@ -67,9 +68,6 @@ def audit_endpoint():
         return jsonify({'error': 'No URL provided'}), 400
     results = seo_audit(url)
     return jsonify(results)
-
-
-import os
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))  # Default to port 10000 if not set
